@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script><%@include file="/resources/js/hello.js" %></script>
-<style><%@include file="/resources/css/hello.css" %></style>  
+<style><%@include file="/resources/css/hello.css" %></style>
 <title>College Cafe</title>
 
 <body>
@@ -29,6 +29,7 @@
   <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
     <a href="#" class="w3-bar-item w3-button">HOME</a>
     <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#cart" class="w3-bar-item w3-button">CART</a>
     <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
     <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
   </div>
@@ -74,7 +75,7 @@
 			<span class="plus">+</span>
 		  </span>
 		  </span>
-	      <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.${food.price}</span>
+	      <span class="w3-right w3-tag w3-dark-grey w3-round foodPrice">Rs.${food.price}</span>
 	      </h1>
 	      <p class="w3-text-grey">${food.description}</p>
 	      <hr>
@@ -92,7 +93,7 @@
 			<span class="plus">+</span>
 		  </span>
 		  </span>
-	      <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.${food.price}</span>
+	      <span class="w3-right w3-tag w3-dark-grey w3-round foodPrice">Rs.${food.price}</span>
 	      </h1>
 	      <p class="w3-text-grey">${food.description}</p>
 	      <hr>
@@ -111,7 +112,7 @@
 			<span class="plus">+</span>
 		  </span>
 		  </span>
-	      <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.${food.price}</span>
+	      <span class="w3-right w3-tag w3-dark-grey w3-round foodPrice">Rs.${food.price}</span>
 	      </h1>
 	      <p class="w3-text-grey">${food.description}</p>
 	      <hr>
@@ -120,6 +121,27 @@
 
   </div>
 </div>
+
+<!-- Cart Container -->
+<div class="w3-container w3-padding-64 w3-grey w3-grayscale w3-xlarge" id="cart">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Cart</h1>
+	<table id="cartTable" class="table align-middle table-nowrap table-centered mb-0">
+    <thead>
+    	<tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th class="text-end" style="width: 120px;">Total</th>
+        </tr>
+    </thead>
+    <tbody id="cartTableBody">
+    	<tr><td></td><td></td><th>Total:</th><td id="cartTotal"></td></tr>
+	</tbody>
+    </table>
+  </div>
+</div>
+
 
 <!-- About Container -->
 <div class="w3-container w3-padding-64 w3-white w3-grayscale w3-xlarge" id="about">

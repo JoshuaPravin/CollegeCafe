@@ -31,7 +31,7 @@ public class CollegeCafeDao implements ICollegeCafeDao{
 		List<Food> breakfastList = new ArrayList<Food>();
 		for(int i=1;i<=5;i++)
 		{
-			Food food = new Food("B"+i, "Breakfast "+i, "Breakfast Description"+i, "40", "0");
+			Food food = new Food("B"+i, "Breakfast "+i, "Breakfast Description"+i, i*10+"", "0");
 			breakfastList.add(food);
 		}
 		return breakfastList;
@@ -43,7 +43,7 @@ public class CollegeCafeDao implements ICollegeCafeDao{
 		List<Food> lunchList = new ArrayList<Food>();
 		for(int i=1;i<=5;i++)
 		{
-			Food food = new Food("L"+i, "Lunch "+i, "Lunch Description"+i, "40", "0");
+			Food food = new Food("L"+i, "Lunch "+i, "Lunch Description"+i, i*10+"", "0");
 			lunchList.add(food);
 		}
 		return lunchList;
@@ -55,7 +55,7 @@ public class CollegeCafeDao implements ICollegeCafeDao{
 		List<Food> snacksList = new ArrayList<Food>();
 		for(int i=1;i<=5;i++)
 		{
-			Food food = new Food("S"+i, "Snacks "+i, "Snacks Description"+i, "40", "0");
+			Food food = new Food("S"+i, "Snacks "+i, "Snacks Description"+i, i*10+"", "0");
 			snacksList.add(food);
 		}
 		return snacksList;
