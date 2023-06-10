@@ -1,6 +1,9 @@
 package com.gjpr.collegecafe.controller;
 
+import java.util.*;
 import java.util.Collection;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gjpr.collegecafe.dao.ICollegeCafeDao;
+import com.gjpr.collegecafe.model.Food;
 
 @RestController
 public class CollegeCafeController {
@@ -43,8 +47,16 @@ public class CollegeCafeController {
 		}
 		
 		mav.setViewName("Hello");
-		String emailId = "Joanne";
-		mav.addObject("userEmail", emailId);
+		
+		//Get all the food items to be displayed in the menu as three seperate lists for breakfast, lunch and snacks
+		List<Food> breakfastList = projectnamebDao.getBreakFastList();
+		List<Food> lunchList = projectnamebDao.getLunchList();
+		List<Food> snacksList = projectnamebDao.getSnacksList();
+		
+		
+		mav.addObject("breakfastList", breakfastList);
+		mav.addObject("lunchList", lunchList);
+		mav.addObject("snacksList", snacksList);
 		return mav;
 	}
 	
